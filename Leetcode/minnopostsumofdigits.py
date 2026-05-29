@@ -48,14 +48,13 @@ Constraints:
 -----------------------------------------------------------------------------------------------------------------------
 class Solution:
     def  minElementAfterSumOfDigits(self, nums:list[int])->int:
-        arr = []
+        min_sum=float('inf')
         for i in range(len(nums)):
             sum = 0
             while nums[i] > 0:
-                sum += nums[i] % 10
+                dig_sum += nums[i] % 10
                 nums[i] //= 10
-            arr.append(sum)
-        min_sum = min(arr)
+            min_sum=min(min_sum,dig_sum)
         return min_sum
 if __name__ == "__main__":
     sol = Solution()
